@@ -4,37 +4,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+class Vehicle
+{
+    string brand;
+    int no_wheels;
+    string sound;
+
+    public Vehicle(string brand, int no_wheels, string sound)
+    {
+        this.brand = brand;
+        this.no_wheels = no_wheels;
+        this.sound = sound;
+    }
+
+    public void set_brand(string brand)
+    {
+        this.brand = brand;
+    }
+
+    public string get_brand()
+    {
+        return brand;
+    }
+
+    public void set_no_wheels(int no_wheels)
+    {
+        this.no_wheels = no_wheels;
+    }
+
+    public int get_no_wheels()
+    {
+        return no_wheels;
+    }
+
+    public void set_sound(string sound)
+    {
+        this.sound = sound;
+    }
+
+    public string get_sound()
+    {
+        return sound;
+    }
+}
+
 class Program
 {
     public static void Main(string[] args)
     {
-        UserManager userManager = new UserManager();
-        userManager.GetuserData();
-        userManager.DisplayResults();
+        
+        var bus = new Vehicle("AL", 6, "Honk");
 
-    }
-}
-class UserManager
-{
-    public string userName;
-    public int userNumber;
-    public void GetuserData()
-    {
-        Console.Write("Enter Your name:");
-        userName = Console.ReadLine();
-
-        Console.Write("Enter an integer :");
-        userNumber = Convert.ToInt32(Console.ReadLine());
-    }
-    public void DisplayResults()
-    {
-        Console.WriteLine("\n___Results___");
-        Console.WriteLine("UserName: " + userName);
-        Console.WriteLine("Integer Rows:");
-        for (int i = 1; i <= 5; i++) 
-        {
-            Console.WriteLine(userNumber);
-        }
-        Console.WriteLine("___________");
+        
+        Console.WriteLine(bus.get_sound());
     }
 }
