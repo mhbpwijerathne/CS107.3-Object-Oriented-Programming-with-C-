@@ -8,21 +8,33 @@ class Program
 {
     public static void Main(string[] args)
     {
-        NameRepeater repeater = new NameRepeater();
-        Console.Write("How many times should I print?");
-        int count = Convert.ToInt32(Console.ReadLine());
-        repeater.PrintName(count);
+        UserManager userManager = new UserManager();
+        userManager.GetuserData();
+        userManager.DisplayResults();
+
     }
 }
-class NameRepeater
+class UserManager
 {
-    public string myName = "Harsha Wijerathne";
-    public void PrintName(int times)
+    public string userName;
+    public int userNumber;
+    public void GetuserData()
     {
-        for (int i = 1; i <= times; i++)
-        {
-            Console.WriteLine(myName);
-        }
+        Console.Write("Enter Your name:");
+        userName = Console.ReadLine();
 
+        Console.Write("Enter an integer :");
+        userNumber = Convert.ToInt32(Console.ReadLine());
+    }
+    public void DisplayResults()
+    {
+        Console.WriteLine("\n___Results___");
+        Console.WriteLine("UserName: " + userName);
+        Console.WriteLine("Integer Rows:");
+        for (int i = 1; i <= 5; i++) 
+        {
+            Console.WriteLine(userNumber);
+        }
+        Console.WriteLine("___________");
     }
 }
